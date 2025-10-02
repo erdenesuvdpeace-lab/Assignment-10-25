@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let uldegdel = 10000;
+      function orlogo() {
+        let orlogoDun = parseInt(
+          prompt("Та орлого хийх мөнгөн дүнгээ оруулна уу..")
+        );
+        uldegdel += orlogoDun;
+      }
+      //Даалгавар 1 Хамгийн бага дансны үлдэгдэл маань 5000₮ байна.
+      function zarlaga() {
+        let zarlagaDun = prompt(
+          "Та гараас зарлага гаргах мөнгөн дүнгээ оруулна уу..."
+        );
+        let shineUldegdel = uldegdel -zarlagaDun -100;
+        if (shineUldegdel <5000){
+          alert ("Таны дансны үлдэгдлийн доод хэмжээ хүрэлцэхгүй байна \n" + "Таны дансны үлдэгдэл: " + uldegdel) ;
+        } else{ uldegdel = shineUldegdel;
+          alert ("Гүйлгээ амжилттай хийгдлээ. Таны үлдэгдэл: " + uldegdel);
+        }
+      }
+      function uldegdelHarah() {
+        alert("Таны дансны үлдэгдэл: " + uldegdel);
+      }
+      let oroldlogo = 0;
+      while (true) {
+        let pass = 123;
+        let passUtga = prompt("Та нууц үгээ оруулна уу...");
+        oroldlogo++;
+        if (oroldlogo == 3) {
+          alert("Таны нууц үг блоклогдлоо");
+          break;
+        } else {
+          if (pass == passUtga) {
+            while (true) {
+              let songolt = prompt(
+                "1-Орлого \n 2-үлдэгдэл харна \n 3-Зарлага гаргана\n 4 Break"
+              );
+              if (songolt == 1) {
+                orlogo();
+              } else if (songolt == 3) {
+                zarlaga();
+              } else if (songolt == 2) {
+                uldegdelHarah();
+              } else if (songolt == 4) {
+                break;
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
